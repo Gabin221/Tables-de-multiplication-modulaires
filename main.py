@@ -3,8 +3,8 @@ import numpy as np
 
 
 def tableModulaire(table, modulo):
-	angles = np.linspace(0, 2*np.pi, 1000)
-	points = np.linspace(0, 2*np.pi, modulo)
+	angles = np.linspace(2*np.pi, 0, 1000)
+	points = np.linspace(2*np.pi, 0, modulo+1)
 
 	cosinusAngles = np.cos(angles)
 	sinusAngles = np.sin(angles)
@@ -15,6 +15,10 @@ def tableModulaire(table, modulo):
 	plt.figure()
 	plt.plot(cosinusAngles, sinusAngles)
 	plt.plot(cosinusPoints, sinusPoints, 'o')
+	
+	for i in range(0, len(cosinusPoints)-1):
+		plt.text(cosinusPoints[i], sinusPoints[i], f"{i}")
+
 	plt.axis('equal')
 	plt.show()
 
@@ -23,5 +27,5 @@ if __name__ == "__main__":
 	# table = input("Quelle table allons nous tracer ? ")
 	# modulo = input("Modulo ? ")
 	table = 2
-	modulo = 10
+	modulo = 100
 	tableModulaire(table, modulo)
