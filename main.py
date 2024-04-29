@@ -29,6 +29,6 @@ def tableModulaire(table, modulo):
 
 
 if __name__ == "__main__":
-	table = int(input("Quelle table allons nous tracer ? "))
-	modulo = int(input("Modulo ? "))
+	table = int(input("Quelle table allons nous tracer ? "))  # 1806
+	modulo = int(input("Modulo ? "))  # 773
 	tableModulaire(table, modulo)
